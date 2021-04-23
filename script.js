@@ -19,7 +19,7 @@ generateGIF()
 const weatherKey = 'b144913c37a5db76946c5657770db654'
 
 function generateWeather(cityID) {
-  const weatherAPI = `http://api.openweathermap.org/data/2.5/weather?id=${cityID}&APPID=${weatherKey}`
+  const weatherAPI = `https://api.openweathermap.org/data/2.5/weather?id=${cityID}&APPID=${weatherKey}`
   fetch(weatherAPI, {mode: 'cors'})
     .then((response) => response.json())
     .then((response) => render(response))
@@ -40,6 +40,7 @@ cityButton.addEventListener('click', (e) => {
 })
 
 function searchCity(cityName) {
+  weatherChart.innerHTML = ''
   fetch('./city.list.json')
     .then((response) => response.json())
     .then((response) => process(response, cityName))
