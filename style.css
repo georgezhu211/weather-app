@@ -1,0 +1,92 @@
+body, html {
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  color: #053BA6;
+}
+.background {
+  background: linear-gradient(-45deg, #00d2ff 40%, #054BA6 100%);
+  min-height: 100%;
+  height: auto;
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "image form"
+    "image content";
+  grid-template-rows: 150px 100px 1fr;
+  grid-template-columns: 2fr 3fr;
+}
+
+.header {
+  grid-area: header;
+  font-size: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  grid-area: image;
+  display: flex;
+  flex-direction: column;
+  flex: 0;
+  max-width: 400px;
+  padding: 80px 0 0 80px;
+}
+
+.image {
+  height: auto;
+  border: 2px solid #053BA6;
+  box-shadow: 0 1px 50px 2px #053BA6;
+  border-radius: 3px;
+}
+
+.form {
+  grid-area: form;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border-radius: 3px;
+  border: none;
+  padding: 3px 10px;
+  width: 150px;
+  font-size: 16px;
+  outline: none;
+  border: 2px solid #053BA6;
+}
+
+button {
+  background-color: #00d2ff;
+  color: #053BA6;
+  border: 2px solid #053BA6;
+  height: 28px;
+  border-radius: 3px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #053BA6;
+  color: white;
+}
+
+.content {
+  grid-area: content;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  height: 130px;
+  margin-bottom: 12px;
+  border: 2px dotted #053BA6;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 2px #053BA6;
+  padding: 0 5px;
+}
+
+.card li{
+  padding: 2px;
+}

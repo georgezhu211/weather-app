@@ -18,16 +18,17 @@ generateGIF()
 
 const weatherKey = 'b144913c37a5db76946c5657770db654'
 
-function generateWeather(cityName) {
-  const weatherAPI = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${weatherKey}`
+function generateWeather(cityID) {
+  const weatherAPI = `http://api.openweathermap.org/data/2.5/weather?id=${cityID}&APPID=${weatherKey}`
   fetch(weatherAPI, {mode: 'cors'})
     .then((response) => response.json())
-    .then((response) => console.log(response))
+    .then((response) => render(response))
 }
 
-generateWeather('Japan')
+// generateWeather('Japan')
 
 // CITY LIST API
+const weatherChart = document.querySelector('.weather-chart')
 const input = document.querySelector('input')
 const cityButton = document.querySelector('.city-button')
 
@@ -35,6 +36,7 @@ cityButton.addEventListener('click', (e) => {
   e.preventDefault()
   const cityName = formatInput(input.value)
   searchCity(cityName)
+  input.value = ""
 })
 
 function searchCity(cityName) {
@@ -43,7 +45,7 @@ function searchCity(cityName) {
     .then((response) => process(response, cityName))
     .then((cities) => {
       cities.forEach((city) => {
-        generateWeather(city.name)
+        generateWeather(city.id)
       })
     })
     .catch(() => console.log('could not find city'))
@@ -62,5 +64,33 @@ function process(cityList, cityName) {
     }
   })
   return cities
+}
+
+function render(city) {
+  console.log(city)
+  const name = document.createElement('li')
+  name.textContent = "Name: " + city.name + ", " + city.sys.country
+  name.style.textAlign = 'center'
+  name.style.fontSize = '18px'
+  name.style.textDecoration = 'underline'
+  const weather = document.createElement('li')
+  weather.textContent = 'Weather: ' + city.weather[0].description
+  const temperature = document.createElement('li')
+  temperature.textContent = 'Temperature: ' + +((city.main.temp - 273.15) * 9/5 + 32).toFixed(2)
+  const humidity = document.createElement('li')
+  humidity.textContent = 'Humidity: ' + city.main.humidity
+  const wind = document.createElement('li')
+  wind.textContent = 'Wind: ' + city.wind.speed
+  const clouds = document.createElement('li')
+  clouds.textContent = 'Cloudiness: ' + city.clouds.all
+  const ul = document.createElement('ul')
+  ul.classList.add('card')
+  ul.appendChild(name)
+  ul.appendChild(weather)
+  ul.appendChild(temperature)
+  ul.appendChild(humidity)
+  ul.appendChild(wind)
+  ul.appendChild(clouds)
+  weatherChart.appendChild(ul)
 }
 
