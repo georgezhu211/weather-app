@@ -1,17 +1,18 @@
-body, html {
+body,
+html {
   height: 100vh;
   font-family: 'Open Sans', sans-serif;
-  color: #053BA6;
+  color: #053ba6;
 }
 .background {
-  background: linear-gradient(-45deg, #00d2ff 40%, #054BA6 100%);
+  background: linear-gradient(-45deg, #00d2ff 40%, #054ba6 100%);
   min-height: 100%;
   height: auto;
   display: grid;
-  grid-template-areas: 
-    "header header"
-    "left form"
-    "left content";
+  grid-template-areas:
+    'header header'
+    'left form'
+    'left content';
   grid-template-rows: 150px 100px 1fr;
   grid-template-columns: 1fr 1fr;
 }
@@ -39,8 +40,8 @@ body, html {
 .image {
   width: 100%;
   height: auto;
-  border: 2px solid #053BA6;
-  box-shadow: 0 1px 50px 2px #053BA6;
+  border: 2px solid #053ba6;
+  box-shadow: 0 1px 50px 2px #053ba6;
   border-radius: 3px;
 }
 
@@ -54,24 +55,28 @@ body, html {
 input {
   border-radius: 3px;
   border: none;
-  padding: 3px 10px;
-  width: 150px;
-  font-size: 16px;
+  padding: 8px 15px;
+  width: 350px;
+  font-size: 20px;
   outline: none;
-  border: 2px solid #053BA6;
+  border: 2px solid #053ba6;
+  box-sizing: border-box;
+  height: 40px;
 }
 
 button {
   background-color: #00d2ff;
-  color: #053BA6;
-  border: 2px solid #053BA6;
-  height: 28px;
+  color: #053ba6;
+  border: 2px solid #053ba6;
+  font-size: 22px;
+  padding: 0 15px;
   border-radius: 3px;
   transition-duration: 0.4s;
+  height: 40px;
 }
 
 button:hover {
-  background-color: #053BA6;
+  background-color: #053ba6;
   color: white;
 }
 
@@ -91,12 +96,12 @@ button:hover {
   width: 300px;
   height: 130px;
   margin-bottom: 12px;
-  border: 2px dotted #053BA6;
+  border: 2px dotted #053ba6;
   border-radius: 3px;
-  box-shadow: 0 0 5px 2px #053BA6;
+  box-shadow: 0 0 5px 2px #053ba6;
   padding: 0 5px;
 }
 
-.card li{
+.card li {
   padding: 2px;
 }

@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <title>Weather App</title>
-</head>
-<body>
-  <div class="background">
-    <header class="header">Weather Forecats</header>
-    <div class="left">
-      <div class="image-container">
-        <img class="image" src="#" />
-        <button class="gif-button">random</button>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="background">
+      <header class="header">Weather Forecats</header>
+      <div class="left">
+        <div class="image-container">
+          <img class="image" src="#" />
+          <button class="gif-button">random</button>
+        </div>
+      </div>
+      <div class="form">
+        <form>
+          <input
+            type="text"
+            placeholder="ex. New York City, Tokyo, London"
+            required
+          />
+          <button class="city-button">search</button>
+        </form>
+      </div>
+      <div class="content">
+        <div class="weather-chart"></div>
       </div>
     </div>
-    <div class="form">
-      <form>
-        <input type="text" placeholder="city name" required>
-        <button class="city-button">search</button>
-      </form>
-    </div>
-    <div class="content">
-      <div class="weather-chart">
 
-      </div>
-    </div>
-  </div>
-  
-
-
-  
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
